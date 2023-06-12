@@ -26,16 +26,16 @@ let salaries = [{
 const getEmployee = (idNumber) => {
     return new Promise(function(resolve){
         resolve(employees.find(o => o.id === idNumber));
-    })
-}
+    });
+};
 
 const getSalary = (employee) => {
     return new Promise(function(resolve){
-        resolve(salaries.find(o => o.id === employee.id))
-    })
-}
+        resolve(salaries.find(o => o.id === employee.id));
+    });
+};
 
 getEmployee(1).then((foundEmployee) => {
-    console.log(`Employee found: ${foundEmployee.name}`)
+    console.log(`Employee found: ${foundEmployee.name}`);
     getSalary(foundEmployee).then((foundSalary) => console.log(`Salary found: ${foundSalary.salary}`));
 });

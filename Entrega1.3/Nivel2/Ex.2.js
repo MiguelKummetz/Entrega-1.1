@@ -25,8 +25,8 @@ let salaries = [{
 
 const getSalary = (employee) => {
     return new Promise(function(resolve){
-        resolve(salaries.find(o => o.id === employee.id))
-    })
-}
+        resolve(salaries.find(o => o.id === employee.id));
+    });
+};
 
 getSalary(employees[2]).then((foundSalary) => console.log(`Salary found: ${foundSalary.salary}`));

@@ -18,31 +18,31 @@ let salaries = [{
     id: 2,
     salary: 1000
 }, {
-    id: 3,
+    id: 4,
     salary: 2000
 }];
 
 const getEmployee = (idNumber) => {
     return new Promise(function(resolve, reject){
 
-        const foundEmployee = employees.find(o => o.id === idNumber)
-        foundEmployee === undefined? reject() : resolve(foundEmployee);
-    })
-}
+        const foundEmployee = employees.find(o => o.id === idNumber);
+        foundEmployee ? resolve(foundEmployee) : reject('Employee not found');
+    });
+};
 
 const getSalary = (employee) => {
     return new Promise(function(resolve, reject){
 
-        const foundSalary = salaries.find(o => o.id === employee.id)
-        foundSalary === undefined? reject() : resolve(foundSalary);
-    })
-}
+        const foundSalary = salaries.find(o => o.id === employee.id);
+        foundSalary ? resolve(foundSalary) : reject('Salary not found');
+    });
+};
 
-getEmployee(1)
+getEmployee(3)
 .then((foundEmployee) => {
-    console.log(`Employee found: ${foundEmployee.name}`)
+    console.log(`Employee found: ${foundEmployee.name}`);
     getSalary(foundEmployee)
     .then((foundSalary) => console.log(`Salary found: ${foundSalary.salary}`))
-    .catch(() => console.log(`Salary not found`));
+    .catch((m) => console.log(m));
 })
-.catch(() => console.log(`Employee not found`));
+.catch((m) => console.log(m));
