@@ -7,13 +7,13 @@ function check(value){
         if (value === true) {
             r('The Promise is resolved');
         }
-            m('Something has gone wrong')
+            m('Something has gone wrong');
     });
-}
+};
 
 check(true)
 .then((message) => console.log('resolve -> ' + message))
-.catch((message) => console.log('reject -> ' + message))
+.catch((message) => console.log('reject -> ' + message));
 
 
-check(false).then((m) => console.log('resolve -> ' + m)).catch((message) => console.log('reject -> ' + message))
+check(false).then((m) => console.log('resolve -> ' + m)).catch((m) => console.log('reject -> ' + m));
