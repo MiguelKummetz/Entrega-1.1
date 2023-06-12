@@ -2,12 +2,12 @@
 //La classe inclourà un mètode dirNom que imprimeixi per consola el paràmetre 'nom'. 
 //Invoca el mètode dirNom des de fora de la classe.
 class Persona {
-    constructor(nom) {this.nom = nom}
+    constructor(nom) {this.nom = nom};
 
     dirNom() {
-        console.log(this.nom)
-    }
-}
-const instance = new Persona('Ami')
+        console.log(this.nom);
+    };
+};
+const instance = new Persona('Ami');
 
-instance.dirNom()
+instance.dirNom();
